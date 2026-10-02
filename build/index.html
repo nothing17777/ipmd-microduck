@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microduck - A tiny biped robot you can teach new tricks | Pollen Robotics</title>
+<meta name="description" content="Microduck is a 25 cm biped robot with 15 motors, a camera, LiDAR and a grasping beak. Playable out of the box, and its open-source stack lets you train new behaviours in simulation and run them on the robot. Pre-order at $399.">
+<link rel="icon" href="/assets/pollen-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FF9500">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="/styles/clone.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-brand" href="/" aria-label="Pollen Robotics × Hugging Face">
+      <img src="/assets/pollen-logo-icon.svg" alt="" aria-hidden="true">
+      <span class="brand-text">Pollen Robotics</span>
+      <span class="brand-x" aria-hidden="true">×</span>
+      <img src="/assets/hf-logo.svg" alt="" aria-hidden="true">
+      <span class="brand-text">Hugging Face</span>
+    </a>
+    <nav class="topbar-nav">
+      <a href="/">Pollen</a>
+      <a href="/reachy-mini/">Reachy Mini</a>
+      <a href="/microduck/" aria-current="page" class="active">Microduck</a>
+      <a href="/reachy-2/">Reachy 2</a>
+    </nav>
+  </div>
+</header>
+
+<header class="mduck-nav" id="mduck-nav">
+  <div class="mduck-nav-inner">
+    <a class="mduck-logo" href="/microduck/">
+      <span class="duck-mark">
+        <img class="duck-closed" src="/assets/microduck/stickers/duck-head-mark.webp" alt="" aria-hidden="true">
+        <img class="duck-open" src="/assets/microduck/stickers/duck-head-mark-open.webp" alt="" aria-hidden="true">
+      </span>
+      <span class="mduck-logo-text">Microduck</span>
+    </a>
+    <div class="mduck-nav-right">
+      <div class="mduck-nav-links">
+        <a href="/microduck/blog/">Blog</a>
+        <a href="/microduck/press-kit/">Press kit</a>
+        <a href="https://huggingface.co/spaces/pollen-robotics/microduck-simulator" target="_blank" rel="noopener noreferrer">Simulator
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3z"/></svg>
+        </a>
+      </div>
+      <a class="btn btn-comic btn-pre-order" href="https://store.pollen-robotics.com/products/microduck" target="_blank" rel="noopener noreferrer">Pre-order</a>
+      <button class="mduck-burger" id="mduck-burger" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline aria-label="Microduck walking around a bedroom, standing on a desk and riding a skateboard">
+      <source src="/assets/microduck/microduck-hero.webm" type="video/webm">
+      <source src="/assets/microduck/microduck-hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-grain" aria-hidden="true"><span class="hero-scanline-tag">AV-1</span></div>
+  </div>
+  <div class="hero-gradient" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-copy">
+      <h1 class="hero-title">
+        <span class="hero-title-top">Microduck</span>
+        <span class="hero-title-sub">Made to move · Ready to learn</span>
+      </h1>
+      <p class="hero-desc">A 25 cm <strong>open-source</strong> biped you train yourself with reinforcement learning. Playable out of the box.</p>
+      <div class="hero-cta">
+        <a class="btn btn-comic btn-xl" href="https://store.pollen-robotics.com/products/microduck" target="_blank" rel="noopener noreferrer">Pre-order for $399</a>
+      </div>
+    </div>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Pre-orders open August 27, 2026 ★</span>
+        <span class="marquee-item">$399 before taxes and shipping ★</span>
+        <span class="marquee-item">Open source ★</span>
+        <span class="marquee-item">Pre-orders open August 27, 2026 ★</span>
+        <span class="marquee-item">$399 before taxes and shipping ★</span>
+        <span class="marquee-item">Open source ★</span>
+        <span class="marquee-item">Pre-orders open August 27, 2026 ★</span>
+        <span class="marquee-item">$399 before taxes and shipping ★</span>
+        <span class="marquee-item">Open source ★</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SQUAD -->
+<section class="squad notch-top">
+  <div class="dot-fade" aria-hidden="true"></div>
+  <div class="container wide">
+    <img class="squad-img" src="/assets/microduck/squad.webp" alt="The Microduck squad" loading="lazy">
+  </div>
+  <div class="notch-bottom notch-bottom-light" aria-hidden="true"></div>
+</section>
+
+<!-- LAUNCH FILM -->
+<section class="film-section light">
+  <div class="container narrow center">
+    <p class="eyebrow">The launch film · sound on</p>
+    <h2 class="h-anton"><span class="ink">Roll the</span><span class="outline">tape</span></h2>
+    <div class="film-frame-wrap">
+      <div class="film-frame">
+        <button class="film-play-btn" type="button" aria-label="Play the Microduck launch film (51 seconds, with sound)">
+          <img src="/assets/microduck/launch-film-poster.jpg" alt="" loading="lazy">
+          <span class="film-badge">▶ Play the film · 0:51</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="notch-bottom notch-bottom-dark" aria-hidden="true"></div>
+</section>
+
+<!-- SIM2REAL -->
+<section class="sim2real dark">
+  <div class="container wide">
+    <div class="sim2real-grid">
+      <div class="duck3d-stage">
+        <img class="duck3d-fallback" src="/images/1.webp" alt="3D render of the Microduck sitting and standing" loading="lazy">
+      </div>
+      <div class="sim2real-copy">
+        <p class="eyebrow">Meet the twin</p>
+        <h2 class="h-anton"><span class="neon">sim2real</span><span class="stroke-neon">that works</span></h2>
+        <p class="lead"><strong>Trained in sim, deployed on the real robot.</strong> This is the simulated twin the ducks were trained on.</p>
+        <div class="cta-row">
+          <a class="btn btn-comic btn-yellow" href="https://huggingface.co/spaces/pollen-robotics/microduck-simulator" target="_blank" rel="noopener noreferrer">Launch the simulator</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="notch-bottom notch-bottom-light" aria-hidden="true"></div>
+</section>
+
+<!-- TEACH IT TRICKS -->
+<section class="tricks light">
+  <img class="sticker sticker-taptap" src="/assets/microduck/stickers/tap-tap.webp" alt="" aria-hidden="true">
+  <div class="container narrow center">
+    <p class="eyebrow">Fun out of the box. Yours to retrain.</p>
+    <h2 class="h-anton"><span class="ink">Teach it new</span><span class="outline">tricks</span></h2>
+    <p class="lead">Every behaviour is a policy you can <strong>retrain on your own machine</strong>.</p>
+
+    <div class="steps-grid">
+      <div class="step-card tilt-1"><p class="step-num orange">01</p><p class="step-title">Train in simulation</p><p class="step-desc">Behaviours are learned in physics sim, on your machine or on Hugging Face Jobs.</p></div>
+      <div class="step-card tilt-2"><p class="step-num amber">02</p><p class="step-title">Deploy on the robot</p><p class="step-desc">One step from simulation to the real thing.</p></div>
+      <div class="step-card tilt-3"><p class="step-num blue">03</p><p class="step-title">Refine the simulation</p><p class="step-desc">Tune, re-train, re-deploy.</p></div>
+      <div class="step-card tilt-4"><p class="step-num purple">04</p><p class="step-title">Publish the policy</p><p class="step-desc">Share your new behavior with the community!</p></div>
+    </div>
+
+    <div class="moves-grid">
+      <div class="move-card">
+        <div class="move-video"><video loop muted playsinline preload="none" poster="/assets/microduck/moves-portrait-alpha/posters/walk.png" aria-label="Walk"><source src="/assets/microduck/moves-portrait-alpha/walk.webm" type="video/webm"></video></div>
+        <p class="move-title">Walk</p><p class="move-desc">Velocity-tracking gait.</p>
+      </div>
+      <div class="move-card">
+        <div class="move-video"><video loop muted playsinline preload="none" poster="/assets/microduck/moves-portrait-alpha/posters/sitstand.png" aria-label="Sit & stand"><source src="/assets/microduck/moves-portrait-alpha/sitstand.webm" type="video/webm"></video></div>
+        <p class="move-title">Sit &amp; stand</p><p class="move-desc">Sits down, holds the pose, stands back up on its own.</p>
+      </div>
+      <div class="move-card">
+        <div class="move-video"><video loop muted playsinline preload="none" poster="/assets/microduck/moves-portrait-alpha/posters/kickL.png" aria-label="Kick"><source src="/assets/microduck/moves-portrait-alpha/kickL.webm" type="video/webm"></video></div>
+        <p class="move-title">Kick</p><p class="move-desc">A one-shot boot, then straight back to walking.</p>
+      </div>
+      <div class="move-card">
+        <div class="move-video"><video loop muted playsinline preload="none" poster="/assets/microduck/moves-portrait-alpha/posters/grab.png" aria-label="Grab"><source src="/assets/microduck/moves-portrait-alpha/grab.webm" type="video/webm"></video></div>
+        <p class="move-title">Grab</p><p class="move-desc">Dips the beak to the ground, scoops, and pops back upright.</p>
+      </div>
+      <div class="move-card">
+        <div class="move-video"><video loop muted playsinline preload="none" poster="/assets/microduck/moves-portrait-alpha/posters/drive.png" aria-label="Roller skating"><source src="/assets/microduck/moves-portrait-alpha/drive.webm" type="video/webm"></video></div>
+        <p class="move-title">Roller skating</p><p class="move-desc">Roller skating locomotion when the skates are equipped.</p>
+      </div>
+      <div class="move-card">
+        <div class="move-video"><video loop muted playsinline preload="none" poster="/assets/microduck/moves-portrait-alpha/posters/standup.png" aria-label="Get back up"><source src="/assets/microduck/moves-portrait-alpha/standup.webm" type="video/webm"></video></div>
+        <p class="move-title">Get back up</p><p class="move-desc">Flat on its back to standing, all by itself, ready for the next command.</p>
+      </div>
+    </div>
+  </div>
+  <div class="notch-bottom notch-bottom-dark" aria-hidden="true"></div>
+</section>
+
+<!-- COLOURWAYS -->
+<section class="colourway dark">
+  <div class="container narrow center">
+    <div class="colourway-grid">
+      <div class="colourway-copy">
+        <p class="eyebrow">One robot, four colourways</p>
+        <h2 class="h-anton"><span class="neon-2">Choose your</span><span class="stroke-neon">colour</span></h2>
+        <p class="lead">Every Microduck ships in one of <strong>four colourways</strong>. Same robot, <strong>same brains underneath</strong> — pick the shell that best fits you.</p>
+        <div class="swatch-row">
+          <button class="swatch" data-color="cream" style="--sw:#f2ecdd" aria-label="Cream"></button>
+          <button class="swatch" data-color="graphite" style="--sw:#3a3a42" aria-label="Graphite"></button>
+          <button class="swatch" data-color="lavender" style="--sw:#9D87E8" aria-label="Lavender"></button>
+          <button class="swatch" data-color="sky" style="--sw:#8FB8DC" aria-label="Sky"></button>
+        </div>
+      </div>
+      <div class="duck3d-stage small">
+        <img class="duck3d-fallback" src="/images/1.webp" alt="Microduck colourway preview" loading="lazy">
+      </div>
+    </div>
+  </div>
+  <div class="notch-bottom notch-bottom-light" aria-hidden="true"></div>
+</section>
+
+<!-- IN THE WILD -->
+<section class="wild light">
+  <div class="container wide">
+    <div class="center">
+      <p class="eyebrow">Out in the world</p>
+      <h2 class="h-anton"><span class="ink">In the wild</span></h2>
+      <p class="lead">The <strong>real robot in real places</strong> — on desks, on the pitch, out at golden hour.</p>
+    </div>
+
+    <div class="gallery">
+      <div class="gallery-row">
+        <div class="tile tile-video"><video loop muted playsinline preload="none" poster="/assets/microduck/gallery/roller-skating-poster.jpg" aria-label="Roller skating"><source src="/assets/microduck/gallery/roller-skating.mp4" type="video/mp4"></video><span class="tile-hint">Play clip</span></div>
+        <div class="tile-col">
+          <div class="tile"><img src="/assets/microduck/gallery/closeup.webp" alt="Close-up of a Microduck standing on a desk in warm light" loading="lazy"><span class="tile-hint">View</span></div>
+          <div class="tile"><img src="/assets/microduck/gallery/playtime.webp" alt="A woman laughing while playing with a Microduck at a table" loading="lazy"><span class="tile-hint">View</span></div>
+          <div class="tile"><img src="/assets/microduck/gallery/watching.webp" alt="A Microduck on a desk looking into the camera" loading="lazy"><span class="tile-hint">View</span></div>
+        </div>
+      </div>
+      <div class="gallery-row">
+        <div class="tile-col">
+          <div class="tile"><img src="/assets/microduck/gallery/kickabout.webp" alt="Two Microducks playing with a ball on a turf pitch" loading="lazy"><span class="tile-hint">View</span></div>
+          <div class="tile"><img src="/assets/microduck/gallery/desk.webp" alt="Overhead view of a desk with Microducks" loading="lazy"><span class="tile-hint">View</span></div>
+        </div>
+        <div class="tile tile-video"><video loop muted playsinline preload="none" poster="/assets/microduck/gallery/balance-recovery-poster.jpg" aria-label="Balance recovery"><source src="/assets/microduck/gallery/balance-recovery.mp4" type="video/mp4"></video><span class="tile-hint">Play clip</span></div>
+      </div>
+      <div class="gallery-row">
+        <div class="tile"><img src="/assets/microduck/gallery/carried.webp" alt="A Microduck carried under an arm" loading="lazy"><span class="tile-hint">View</span></div>
+        <div class="tile"><img src="/assets/microduck/gallery/screentime.webp" alt="A Microduck standing in front of a laptop screen" loading="lazy"><span class="tile-hint">View</span></div>
+        <div class="tile"><img src="/assets/microduck/gallery/skate.webp" alt="Microduck outdoors at golden hour" loading="lazy"><span class="tile-hint">View</span></div>
+      </div>
+      <div class="tile tile-video wide-tile"><video loop muted playsinline preload="none" poster="/assets/microduck/gallery/squad-standup-poster.jpg" aria-label="Four Microducks standing up together"><source src="/assets/microduck/gallery/squad-standup.mp4" type="video/mp4"></video><span class="tile-hint">Play clip</span></div>
+      <div class="gallery-row">
+        <div class="tile"><img src="/assets/microduck/gallery/stickers.webp" alt="A hand sticking a lips sticker onto a Microduck's beak" loading="lazy"><span class="tile-hint">View</span></div>
+        <div class="tile"><img src="/assets/microduck/gallery/playroom.webp" alt="A Microduck standing on a pink rug" loading="lazy"><span class="tile-hint">View</span></div>
+        <div class="tile"><img src="/assets/microduck/gallery/morning.webp" alt="A Microduck on a desk in warm morning light" loading="lazy"><span class="tile-hint">View</span></div>
+        <div class="tile"><img src="/assets/microduck/gallery/bedroom.webp" alt="A Microduck standing on a bedroom rug" loading="lazy"><span class="tile-hint">View</span></div>
+      </div>
+      <div class="tile tile-video wide-tile"><video loop muted playsinline preload="none" poster="/assets/microduck/gallery/chorale-poster.jpg" aria-label="Four Microducks singing together"><source src="/assets/microduck/gallery/chorale.mp4" type="video/mp4"></video><span class="tile-hint">Play clip</span><button class="sound-toggle" type="button">🔊 Sound off</button></div>
+      <div class="gallery-row">
+        <div class="tile tile-video"><video loop muted playsinline preload="none" poster="/assets/microduck/gallery/grab-and-carry-poster.jpg" aria-label="Grabbing and carrying"><source src="/assets/microduck/gallery/grab-and-carry.mp4" type="video/mp4"></video><span class="tile-hint">Play clip</span></div>
+        <div class="tile"><img src="/assets/microduck/gallery/walkabout.webp" alt="A Microduck walking across a games table" loading="lazy"><span class="tile-hint">View</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="notch-bottom notch-bottom-dark" aria-hidden="true"></div>
+</section>
+
+<!-- PACKS -->
+<section class="packs dark">
+  <div class="container narrow center">
+    <p class="eyebrow">The robot, and what to add to it</p>
+    <h2 class="h-anton"><span class="orange-glow">Pick your</span><span class="stroke-neon">pack</span></h2>
+    <p class="lead">The robot is <strong>everything you need on day one</strong>. The packs add play gear and spare parts.</p>
+
+    <div class="robot-pack">
+      <div class="robot-pack-media">
+        <img src="/assets/microduck/pack-robot.webp" alt="The Microduck robot standing on a desk" loading="lazy">
+        <p class="price-tag">$399</p>
+      </div>
+      <div class="robot-pack-copy">
+        <p class="label-sm">The robot</p>
+        <h3 class="h-anton-sm">Microduck</h3>
+        <p class="label-sm label-faint">In the box</p>
+        <p class="body-copy">Robot, battery, USB-C cable, game controller.</p>
+        <a class="btn btn-comic-outline" href="https://store.pollen-robotics.com/products/microduck" target="_blank" rel="noopener noreferrer">Pre-order</a>
+      </div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <div class="pack-head pack-head-yellow"><h3>Charger pack</h3></div>
+        <div class="pack-media"><img src="/assets/microduck/pack-charger.webp" alt="Dual-slot battery charger, two spare batteries, USB-C cable" loading="lazy"><p class="price-chip">$39</p></div>
+        <div class="pack-body"><p>Dual charger, 2x batteries.</p><a class="btn btn-comic-outline" href="https://store.pollen-robotics.com/products/charger-pack?variant=58538260398454" target="_blank" rel="noopener noreferrer">Pre-order</a></div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-head pack-head-cyan"><h3>Dev pack</h3></div>
+        <div class="pack-media"><img src="/assets/microduck/pack-dev.webp" alt="Spare motors, cables, batteries, charger, NFC tags, screwdriver" loading="lazy"><p class="price-chip">$119</p></div>
+        <div class="pack-body"><p>3x spare motors, 5x motor cables, 2x batteries, dual charger, 10x NFC tags, Hugging Face credit, screwdriver, screw pack.</p><a class="btn btn-comic-outline" href="https://store.pollen-robotics.com/products/dev-pack?variant=58531128967542" target="_blank" rel="noopener noreferrer">Pre-order</a></div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-head pack-head-pink"><h3>Accessory pack</h3></div>
+        <div class="pack-media"><img src="/assets/microduck/pack-accessories.webp" alt="Rollers, ball, laser pen, NFC polaroid and NFC tags" loading="lazy"><p class="price-chip">$39</p></div>
+        <div class="pack-body"><p>Laser pointer, NFC polaroid, 2x rollers, ball, 10x NFC tags.</p><a class="btn btn-comic-outline" href="https://store.pollen-robotics.com/products/accessory-pack?variant=58538525262198" target="_blank" rel="noopener noreferrer">Pre-order</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="notch-bottom notch-bottom-light" aria-hidden="true"></div>
+</section>
+
+<!-- TECH SPECS -->
+<section class="specs light">
+  <div class="container narrow">
+    <div class="specs-grid">
+      <div>
+        <h2 class="h-anton-sm2"><span class="ink">Tech specs</span></h2>
+        <a class="btn btn-comic-yellow" href="/microduck/press-kit">Full sheet in the press kit</a>
+      </div>
+      <dl class="specs-list">
+        <div class="specs-row"><dt>15</dt><dd>Motors</dd></div>
+        <div class="specs-row"><dt>25 cm</dt><dd>Tall</dd></div>
+        <div class="specs-row"><dt>800 g</dt><dd>To pick up</dd></div>
+        <div class="specs-row"><dt>Camera</dt><dd>Plus LiDAR and two IMUs</dd></div>
+        <div class="specs-row"><dt>7</dt><dd>Trained moves in the box</dd></div>
+        <div class="specs-row"><dt>50 Hz</dt><dd>Onboard policy loop</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN SOURCE -->
+<section class="open-source dark">
+  <div class="container narrow">
+    <div class="open-source-grid">
+      <div>
+        <p class="eyebrow">Built in the open</p>
+        <h2 class="h-anton"><span class="blue-glow">Open source</span></h2>
+        <p class="lead">The SDK, the simulation and <strong>the full RL training stack</strong> are on GitHub. What the robot runs is what you can <strong>read, fork and retrain</strong>.</p>
+        <a class="btn btn-comic-paper" href="https://github.com/pollen-robotics/microduck" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"/></svg>
+          pollen-robotics/microduck
+        </a>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span><span class="terminal-title">ssh microduck</span></div>
+        <pre class="terminal-body"><span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">robotctl monitor</span>   <span class="t-comment"># status of the robot</span></span><span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">robotctl configure</span> <span class="t-comment"># configure the robot</span></span><span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">robotctl update</span>    <span class="t-comment"># update the robot</span></span></pre>
+      </div>
+    </div>
+    <div class="badge-row">
+      <div class="badge-card badge-orange"><p class="badge-title">Apache-2.0</p><p class="badge-desc">The whole software stack, permissively licensed</p></div>
+      <div class="badge-card badge-yellow"><p class="badge-title">MuJoCo</p><p class="badge-desc">The physics sim every policy is trained in</p></div>
+      <div class="badge-card badge-purple"><p class="badge-title">7 policies</p><p class="badge-desc">Every shipped move, published and retrainable</p></div>
+    </div>
+  </div>
+  <div class="notch-bottom notch-bottom-light" aria-hidden="true"></div>
+</section>
+
+<!-- DISCORD -->
+<section class="discord light">
+  <img class="sticker sticker-bomb" src="/assets/microduck/stickers/bomb.webp" alt="" aria-hidden="true">
+  <div class="container narrow center">
+    <div class="discord-badge" aria-hidden="true">
+      <svg width="56" height="42" viewBox="0 0 127.14 96.36" fill="#fff"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+    </div>
+    <h2 class="h-anton"><span class="ink">Join the flock</span></h2>
+    <p class="lead">Builds on show, <strong>policies to swap</strong>, help when a leg does something strange. The community lives on Discord.</p>
+    <a class="btn btn-comic btn-xl" href="https://discord.com/invite/pollen-community-519098054377340948" target="_blank" rel="noopener noreferrer">
+      <svg width="20" height="15" viewBox="0 0 127.14 96.36" fill="currentColor"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+      Join the Discord
+    </a>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<section class="final-cta light">
+  <div class="container narrow center">
+    <p class="eyebrow">End of tape · be kind, rewind</p>
+    <h2 class="h-anton"><span class="ink">Pre-orders are</span><span class="outline">open now</span></h2>
+    <a class="btn btn-comic btn-xl" href="https://store.pollen-robotics.com/products/microduck" target="_blank" rel="noopener noreferrer">Pre-order for $399</a>
+    <p class="fine-print">In four colourways.<br>Introductory price, before taxes and shipping.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <img class="footer-ghost" src="/assets/sleeping-reachy.svg" alt="" aria-hidden="true">
+  <div class="container wide">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-row"><img src="/assets/pollen-logo-icon.svg" alt="" aria-hidden="true"><p>Pollen Robotics</p></div>
+        <p class="footer-tag">Expressive, open-source robots for AI builders and makers.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/pollen-robotics" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://x.com/pollenrobotics" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+          <a href="https://www.linkedin.com/company/pollen-robotics" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+          <a href="https://www.youtube.com/pollen-robotics" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+          <a href="https://discord.gg/2bAhWfXme9" target="_blank" rel="noopener noreferrer" aria-label="Discord">D</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="/reachy-mini/">Reachy Mini</a>
+        <a href="/microduck/">Microduck</a>
+        <a href="/reachy-mini/apps/">Apps</a>
+        <a href="https://store.pollen-robotics.com" target="_blank" rel="noopener noreferrer">Order Reachy Mini</a>
+        <a href="/reachy-2/">Reachy 2</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/reachy-mini/getting-started/">Get started</a>
+        <a href="/reachy-mini/download/">Download</a>
+        <a href="/reachy-mini/flasher/">OS recovery (Flasher)</a>
+        <a href="/reachy-mini/moves/">Moves gallery</a>
+        <a href="/reachy-mini/faq/">FAQ</a>
+        <a href="https://huggingface.co/docs/reachy_mini/index" target="_blank" rel="noopener noreferrer">Reachy Mini docs</a>
+        <a href="https://docs.pollen-robotics.com/" target="_blank" rel="noopener noreferrer">Reachy 2 docs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about-us/">About us</a>
+        <a href="/contact-us/">Contact</a>
+        <a href="https://discord.gg/2bAhWfXme9" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://github.com/pollen-robotics" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://huggingface.co/pollen-robotics" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="https://github.com/pollen-robotics/reachy_mini/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">License</a>
+        <a href="/legal-notice/">Legal notice</a>
+        <a href="/personal-data-protection-charter/">Privacy</a>
+        <a href="/general-terms-and-conditions-of-sales/">Terms of sale</a>
+        <a href="/cookies/">Cookies</a>
+        <button type="button" class="link-btn" id="cookie-settings-btn">Cookie settings</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Pollen Robotics · Open source under Apache 2.0</p>
+      <div class="footer-hf"><p>Part of</p><a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer"><img src="/assets/hf-logo.svg" alt="" aria-hidden="true">Hugging Face</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile drawer -->
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a class="mduck-logo" href="/microduck/">
+      <span class="duck-mark"><img src="/assets/microduck/stickers/duck-head-mark.webp" alt=""></span>
+      <span class="mduck-logo-text">Microduck</span>
+    </a>
+    <button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
+  </div>
+  <ul class="drawer-list">
+    <li><a href="/microduck/blog/">Blog</a></li>
+    <li><a href="/microduck/press-kit/">Press kit</a></li>
+    <li><a href="https://huggingface.co/spaces/pollen-robotics/microduck-simulator" target="_blank" rel="noopener noreferrer">Simulator</a></li>
+    <li><a class="btn btn-comic" href="https://store.pollen-robotics.com/products/microduck" target="_blank" rel="noopener noreferrer">Pre-order</a></li>
+  </ul>
+</div>
+
+<!-- Cookie banner -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="cookie-row">
+    <img class="cookie-img" src="/assets/reachy-eating-a-cookie.svg" alt="">
+    <div>
+      <p class="cookie-title">We value your privacy</p>
+      <p class="cookie-desc">We use cookies to run the site and, with your consent, measure audience. See the <a href="/cookies">cookie policy</a> or our <a href="/personal-data-protection-charter" target="_blank" rel="noopener noreferrer">privacy policy</a>.</p>
+    </div>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" class="btn-sm btn-sm-solid" id="cookie-accept">Accept</button>
+    <button type="button" class="btn-sm btn-sm-outline" id="cookie-reject">Reject</button>
+    <button type="button" class="btn-sm btn-sm-text" id="cookie-customize">Customize</button>
+  </div>
+</div>
+
+<script src="/scripts/clone.js"></script>
+</body>
+</html>
